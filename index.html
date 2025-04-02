@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NRK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div class="snow"></div>
+    <div class="cursor-circle"></div>
+    <section class="relative lg:p-8 px-2 py-8 mt-4">
+      <!-- Tab at the Top Left -->
+      <div
+        class="absolute top-0 lg:left-8 left-2 bg-gray-800 text-white px-4 py-2 font-bold rounded-tl-lg rounded-tr-lg"
+      >
+        NRK
+      </div>
+
+      <div
+        class="relative w-full h-[90vh] bg-gray-800 bg-opacity-70 p-10 rounded-lg overflow-hidden"
+      >
+        <!-- Horizontal Scroll Container with Snap Scroll -->
+        <div
+          id="scrollContainer"
+          class="flex space-x-10 w-full h-full overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory"
+        >
+          <!-- Section 1 -->
+
+          <div
+            class="flex flex-shrink-0 w-full h-full items-center justify-between snap-start"
+          >
+            <!-- Left Content -->
+
+            <div class="text-center lg:text-left w-3/4 pl-20">
+              <div
+                class="relative inline-block px-4 py-2 border-2 border-transparent rounded-lg"
+              >
+                <h4
+                  class="text-red-500 px-4 py-2 relative z-10 tracking-[0.6em]"
+                >
+                  WEB DEVELOPER
+                </h4>
+                <div
+                  class="absolute inset-0 border-2 border-red-500 animate-border rounded-lg"
+                ></div>
+              </div>
+              <h1 class="text-6xl font-semibold leading-[78px] text-white">
+                Crafting Digital Experiences with
+                <span id="word1" class="text-blue-400 inline-block"></span>
+                <span id="ampersand" class="text-white inline-block"></span>
+                <span id="word2" class="text-green-400 inline-block"></span>
+              </h1>
+
+              <p class="text-xl text-gray-300 mt-2">
+                Front-End Developer | Creating Modern & Interactive Web
+                Interfaces
+              </p>
+              <div class="mt-8">
+                <a
+                  class="mt-8 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all duration-300 ease-in-out relative overflow-hidden border-2 border-transparent hover:border-blue-300 animate-border-draw"
+                >
+                  View Projects
+                </a>
+              </div>
+            </div>
+            <!-- Right Image -->
+            <div class="w-1/4 flex justify-center">
+              <img
+                src="./assets/Hero1.png"
+                alt="Portfolio Image"
+                class="w-[400px] h-[500px] object-cover wake-up"
+              />
+            </div>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="relative flex flex-shrink-0 w-full h-full items-center justify-between snap-start pl-20">
+            <!-- Background Label -->
+            <div class="absolute left-10 top-48  flex items-center h-full">
+              <span class="text-8xl font-bold text-gray-200 opacity-20 -z-10 rotate-[-90deg] origin-left">
+                ABOUT US
+              </span>
+            </div>
+          
+            <div class="text-center lg:text-left w-1/2">
+              <h1 class="text-5xl font-bold text-green-400">Skills & Expertise</h1>
+              <p class="mt-4 text-lg text-gray-300">
+                I specialize in React, Tailwind CSS, and JavaScript, building modern and responsive web applications.
+              </p>
+              <button class="mt-6 bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
+                Explore Skills
+              </button>
+            </div>
+          
+            <div class="w-1/2 flex justify-center">
+              <img
+                src="https://img.freepik.com/premium-photo/3d-illustration-modern-young-man-with-laptop-sitting-comfortably-chair-with-relaxed-expression-his-face_670382-49944.jpg?w=1380"
+                alt="Skills Image"
+                class="w-[400px] h-[400px] object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+          
+
+          <!-- Section 3 -->
+          <div
+            class="flex flex-shrink-0 w-full h-full items-center justify-between snap-start"
+          >
+            <div class="text-center lg:text-left w-1/2">
+              <h1 class="text-5xl font-bold text-yellow-400">Contact Me</h1>
+              <p class="mt-4 text-lg text-gray-300">
+                Let's work together! Feel free to reach out for collaborations
+                or freelance projects.
+              </p>
+              <button
+                class="mt-6 bg-yellow-500 text-white px-6 py-3 rounded-full hover:bg-yellow-600 transition"
+              >
+                Get in Touch
+              </button>
+            </div>
+            <div class="w-1/2 flex justify-center">
+              <img
+                src="https://img.freepik.com/premium-photo/3d-illustration-young-businessman-talking-phone-sitting-chair-with-friendly-smile_670382-46117.jpg?w=1380"
+                alt="Contact Image"
+                class="w-[400px] h-[400px] object-cover rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <script>
+      const word1 = "Creativity";
+      const ampersand = " & ";
+      const word2 = "Innovation";
+    
+      function typeEffect(element, text, delay, callback) {
+        let i = 0;
+        setTimeout(() => {
+          const interval = setInterval(() => {
+            if (i < text.length) {
+              element.textContent += text[i];
+              i++;
+            } else {
+              clearInterval(interval);
+              if (callback) callback(); // Run next animation if provided
+            }
+          }, 150); // Adjust typing speed
+        }, delay);
+      }
+    
+      typeEffect(document.getElementById("word1"), word1, 500, () => {
+        typeEffect(document.getElementById("ampersand"), ampersand, 200, () => {
+          typeEffect(document.getElementById("word2"), word2, 200);
+        });
+      });
+    </script> -->
+
+    <script>
+      const word1 = "Creativity";
+      const ampersand = " & ";
+      const word2 = "Innovation";
+
+      function typeEffect(element, text, delay, callback) {
+        let i = 0;
+        element.textContent = ""; // Clear text before starting animation
+        setTimeout(() => {
+          const interval = setInterval(() => {
+            if (i < text.length) {
+              element.textContent += text[i];
+              i++;
+            } else {
+              clearInterval(interval);
+              if (callback) callback(); // Run next animation if provided
+            }
+          }, 150); // Adjust typing speed
+        }, delay);
+      }
+
+      function startAnimation() {
+        typeEffect(document.getElementById("word1"), word1, 500, () => {
+          typeEffect(
+            document.getElementById("ampersand"),
+            ampersand,
+            200,
+            () => {
+              typeEffect(document.getElementById("word2"), word2, 200, () => {
+                setTimeout(startAnimation, 1500); // Restart the animation after a delay
+              });
+            }
+          );
+        });
+      }
+
+      startAnimation(); // Start animation loop
+    </script>
+
+    <script>
+      const scrollContainer = document.getElementById("scrollContainer");
+
+      // Enable Horizontal Scrolling with Mouse Wheel
+      scrollContainer.addEventListener("wheel", (event) => {
+        event.preventDefault();
+        scrollContainer.scrollBy({
+          left: event.deltaY * 1.5,
+          behavior: "smooth",
+        });
+      });
+    </script>
+
+    <script>
+      // Navbar Scroll Effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled", "py-3");
+        } else {
+          navbar.classList.remove("scrolled", "py-3");
+        }
+      });
+
+      // Cursor Circle Follow
+      const cursor = document.querySelector(".cursor-circle");
+      const links = document.querySelectorAll("a");
+      const snowflakes = [];
+
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.transform = `translate(${e.clientX - 25}px, ${
+          e.clientY - 25
+        }px)`;
+        repelSnowflakes(e.clientX, e.clientY);
+      });
+
+      // Enlarge cursor when near an anchor tag
+      document.addEventListener("mousemove", (e) => {
+        let isNearLink = false;
+        links.forEach((link) => {
+          const rect = link.getBoundingClientRect();
+          const distance = Math.hypot(
+            e.clientX - (rect.left + rect.width / 2),
+            e.clientY - (rect.top + rect.height / 2)
+          );
+          if (distance < 50) {
+            isNearLink = true;
+          }
+        });
+        cursor.style.width = isNearLink ? "80px" : "50px";
+        cursor.style.height = isNearLink ? "80px" : "50px";
+      });
+
+      // Reset cursor on leave
+      links.forEach((link) => {
+        link.addEventListener("mouseenter", () => {
+          cursor.style.width = "80px";
+          cursor.style.height = "80px";
+        });
+        link.addEventListener("mouseleave", () => {
+          cursor.style.width = "50px";
+          cursor.style.height = "50px";
+        });
+      });
+
+      // Snowflakes Animation
+      function createSnowflakes() {
+        const snowContainer = document.querySelector(".snow");
+        for (let i = 0; i < 50; i++) {
+          let snowflake = document.createElement("div");
+          snowflake.innerHTML = "✦";
+          snowflake.classList.add("snowflake");
+          snowflake.style.position = "absolute";
+          snowflake.style.left = Math.random() * window.innerWidth + "px";
+          snowflake.style.top = Math.random() * window.innerHeight + "px";
+          snowflake.style.animationDuration = Math.random() * 20 + 10 + "s";
+          snowflake.style.fontSize = Math.random() * 10 + 10 + "px";
+          snowflake.style.animationDelay = Math.random() * 2 + "s";
+          snowContainer.appendChild(snowflake);
+          snowflakes.push({
+            element: snowflake,
+            originalX: parseFloat(snowflake.style.left),
+            originalY: parseFloat(snowflake.style.top),
+          });
+        }
+      }
+      createSnowflakes();
+
+      // Repel Snowflakes Near Cursor
+      function repelSnowflakes(cursorX, cursorY) {
+        snowflakes.forEach((snowflake) => {
+          const rect = snowflake.element.getBoundingClientRect();
+          const snowX = rect.left + rect.width / 2;
+          const snowY = rect.top + rect.height / 2;
+          const distance = Math.hypot(cursorX - snowX, cursorY - snowY);
+
+          if (distance < 100) {
+            const angle = Math.atan2(snowY - cursorY, snowX - cursorX);
+            const offsetX = Math.cos(angle) * 80;
+            const offsetY = Math.sin(angle) * 80;
+            snowflake.element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            setTimeout(() => {
+              snowflake.element.style.transform = "translate(0, 0)";
+            }, 500);
+          }
+        });
+      }
+
+      // Update snowflake positions dynamically
+      setInterval(() => {
+        snowflakes.forEach((snowflake) => {
+          let currentTop = parseFloat(snowflake.element.style.top);
+          snowflake.element.style.top = currentTop + 1 + "px";
+          if (currentTop > window.innerHeight) {
+            snowflake.element.style.top = "0px";
+            snowflake.element.style.left =
+              Math.random() * window.innerWidth + "px";
+          }
+        });
+      }, 50);
+    </script>
+  </body>
+</html>
