@@ -11,333 +11,450 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./index.css" />
+  <script>document.documentElement.classList.add('js')</script>
+  <style>
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+    }
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.6s cubic-bezier(.4,0,.2,1);
+    }
+    .in-view {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  </style>
 </head>
 
 <body class="bg-gray-900 text-white ">
   <div class="snow"></div>
   <div class="cursor-circle"></div>
   <section class="relative lg:p-8 px-2 py-8 mt-4">
-    <!-- Tab at the Top Left -->
     <div class="absolute top-0 lg:left-8 left-2 bg-gray-800 text-white px-4 py-2 font-bold rounded-tl-lg rounded-tr-lg">
       NRK
     </div>
-
-    <div class="relative w-full h-[93vh] bg-gray-800 bg-opacity-70 px-10 rounded-lg overflow-y-auto hide-scrollbar">
-      <!-- Horizontal Scroll Container with Snap Scroll -->
+    <div class="relative w-full h-screen bg-gray-800 bg-opacity-70 lg:px-10 px-2 rounded-lg overflow-y-auto hide-scrollbar">
       <div id="scrollContainer" class="flex flex-col space-y-20 w-full ">
-
-        <!-- Section 1 -->
-
-        <div class="flex flex-col lg:flex-row items-center justify-between min-h-screen ">
-
+        <!-- Section 1: Hero/Intro -->
+        <div class="flex flex-col-reverse lg:flex-row items-center justify-between min-h-[60vh] sm:min-h-[70vh] lg:min-h-screen w-full max-w-6xl mx-auto py-8 px-2 sm:px-4 md:px-6 lg:px-10 fade-up">
           <!-- Left Content -->
-
-          <div class="text-center lg:text-left w-3/4 pl-20">
-            <div class="relative inline-block px-4 py-2 border-2 border-transparent rounded-lg">
-              <h4 class="text-red-500 px-4 py-2 relative z-10 tracking-[0.6em]">
+          <div class="w-full lg:w-3/4 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <div class="relative inline-block px-4 py-2 border-2 border-transparent rounded-lg mb-4">
+              <h4 class="text-red-500 px-4 py-2 relative z-10 tracking-[0.6em] text-xs sm:text-sm md:text-base">
                 WEB DEVELOPER
               </h4>
               <div class="absolute inset-0 border-2 border-red-500 animate-border rounded-lg"></div>
             </div>
-            <h1 class="text-6xl font-semibold leading-[78px] text-white">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight lg:leading-[78px] text-white">
               Crafting Digital Experiences with
               <span id="word1" class="text-blue-400 inline-block"></span>
               <span id="ampersand" class="text-white inline-block"></span>
               <span id="word2" class="text-green-400 inline-block"></span>
             </h1>
-
-            <p class="text-xl text-gray-300 mt-2">
-              Front-End Developer | Creating Modern & Interactive Web
-              Interfaces
+            <p class="text-base sm:text-lg md:text-xl text-gray-300 mt-2">
+              Front-End Developer | Creating Modern & Interactive Web Interfaces
             </p>
-            <div class="mt-8">
-              <a
-                class="mt-8 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all duration-300 ease-in-out relative overflow-hidden border-2 border-transparent hover:border-blue-300 animate-border-draw">
+            <div class="mt-6 sm:mt-8">
+              <a class="text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all duration-300 ease-in-out relative overflow-hidden border-2 border-transparent hover:border-blue-300 animate-border-draw block sm:inline-block w-full sm:w-auto">
                 View Projects
               </a>
             </div>
           </div>
           <!-- Right Image -->
-          <div class="w-1/4 flex justify-center">
-            <img src="./assets/Hero1.png" alt="Portfolio Image" class="w-[400px] h-[500px] object-cover wake-up" />
+          <div class="w-full lg:w-1/4 flex justify-center mb-8 lg:mb-0" data-taos="fade-up">
+            <img src="./assets/Character_20-removebg-preview.png" alt="Portfolio Image" class="w-48 h-60 sm:w-72 sm:h-80 md:w-[300px] md:h-[400px] lg:w-[400px] lg:h-[500px] object-cover wake-up" />
           </div>
         </div>
 
-        <!-- Section 2 -->
-        <div class="flex flex-col lg:flex-row items-center justify-between min-h-screen ">
-
-<!-- 
-          <div class="absolute left-10 -bottom-[45px] transform  flex items-center">
-            <span class="text-8xl font-bold text-gray-200 opacity-20 -z-10 rotate-[-90deg] origin-left">
-              ABOUT US
-            </span>
-          </div> -->
-
-          <div class="text-center lg:text-left w-1/2">
-            <h1 class="text-5xl font-bold text-green-400">Skills & Expertise</h1>
-            <p class="mt-4 text-base text-gray-300">
-              As a passionate frontend developer, I specialize in crafting dynamic and responsive user interfaces using
-              modern web technologies. With a strong command of Bootstrap, CSS, and SASS, I ensure clean, maintainable,
-              and scalable styles. My expertise extends to Tailwind CSS, allowing me to build sleek and highly
-              customizable designs efficiently.
-
-            </p>
-
-            <p class="mt-1 text-base text-gray-300">
-              I am proficient in React, working with both JavaScript (JS) and TypeScript (TSX) to create robust and
-              interactive web applications. Additionally, I have experience with Vue.js, enabling me to develop
-              versatile frontend solutions. Beyond web development, I excel in mobile app development using React
-              Native, delivering seamless cross-platform experiences. My deep understanding of JavaScript empowers me to
-              handle diverse frontend challenges, ensuring smooth performance and an exceptional user experience.
-            </p>
-
-            <button class="mt-6 bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition">
-              Explore Skills
-            </button>
-          </div>
-
-          <div class="w-1/2 flex justify-center">
-            <img src="./assets/port-about1.png" alt="Skills Image" class="w-[400px] h-[400px] object-cover wake-up" />
-          </div>
-        </div>
-
-
-        <!-- Section 3 -->
-        <div class="flex flex-col lg:flex-row items-center justify-between min-h-screen mb-20">
-
-          <div class="text-center lg:text-left w-1/2">
-            <h1 class="text-5xl font-bold text-yellow-400">Contact Me</h1>
-            <p class="mt-4 text-lg text-gray-300">
-              Let's work together! Feel free to reach out for collaborations
-              or freelance projects.
-            </p>
-            <button class="mt-6 bg-yellow-500 text-white px-6 py-3 rounded-full hover:bg-yellow-600 transition">
-              Get in Touch
-            </button>
-          </div>
-          <div class="w-1/2 flex justify-center">
-            <img
-              src="https://img.freepik.com/premium-photo/3d-illustration-young-businessman-talking-phone-sitting-chair-with-friendly-smile_670382-46117.jpg?w=1380"
-              alt="Contact Image" class="w-[400px] h-[400px] object-cover rounded-lg shadow-lg" />
-          </div>
-        </div>
-
-
-        <!-- Section 2 -->
-        <div class="flex flex-col lg:flex-row items-center justify-between min-h-screen mb-20">
-
-
-          <!-- Projects Section -->
-          <div class="">
-            <div class="text-center mb-16">
-              <h2 class="text-5xl font-bold text-green-400">My Projects</h2>
-              <p class="mt-4 text-gray-400 max-w-2xl mx-auto">
-                Here are some of the projects I've worked on, showcasing my expertise in frontend and mobile
-                development.
-              </p>
+        <!-- Section 2: Skills & Expertise -->
+        <div class="max-w-6xl mx-auto py-8 px-2 sm:px-4 md:px-6 lg:px-10 fade-up">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-green-400 mb-6 sm:mb-8 text-center">Skills & Expertise</h1>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Skill Card: React -->
+            <div class="fade-up bg-white/10 backdrop-blur-md border-l-4 border-blue-400 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="h-12 w-12 mb-2" alt="React" />
+              <span class="text-white font-semibold text-lg mb-1">React</span>
+              <p class="text-gray-300 text-center text-sm">Building interactive UIs and SPAs with React.js and React Native.</p>
             </div>
+            <!-- Skill Card: JavaScript -->
+            <div class="fade-up bg-white/10 backdrop-blur-md border-l-4 border-yellow-400 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="h-12 w-12 mb-2" alt="JavaScript" />
+              <span class="text-white font-semibold text-lg mb-1">JavaScript</span>
+              <p class="text-gray-300 text-center text-sm">Modern ES6+ JavaScript for dynamic, high-performance web apps.</p>
+            </div>
+            <!-- Skill Card: TypeScript -->
+            <div class="fade-up bg-white/10 backdrop-blur-md border-l-4 border-blue-500 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="h-12 w-12 mb-2" alt="TypeScript" />
+              <span class="text-white font-semibold text-lg mb-1">TypeScript</span>
+              <p class="text-gray-300 text-center text-sm">Type-safe, scalable codebases for React and Node.js projects.</p>
+            </div>
+            <!-- Skill Card: Vue.js -->
+            <div class="fade-up bg-white/10 backdrop-blur-md border-l-4 border-green-400 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" class="h-12 w-12 mb-2" alt="Vue.js" />
+              <span class="text-white font-semibold text-lg mb-1">Vue.js</span>
+              <p class="text-gray-300 text-center text-sm">Versatile frontend solutions with Vue.js and Vue Router.</p>
+            </div>
+            <!-- Skill Card: Bootstrap -->
+            <div class="fade-up bg-white/10 backdrop-blur-md border-l-4 border-purple-400 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" class="h-12 w-12 mb-2" alt="Bootstrap" />
+              <span class="text-white font-semibold text-lg mb-1">Bootstrap</span>
+              <p class="text-gray-300 text-center text-sm">Responsive layouts and components with Bootstrap 5.</p>
+            </div>
+            <!-- Skill Card: SASS -->
+            <div class="fade-up bg-white/10 backdrop-blur-md border-l-4 border-pink-400 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" class="h-12 w-12 mb-2" alt="SASS" />
+              <span class="text-white font-semibold text-lg mb-1">SASS</span>
+              <p class="text-gray-300 text-center text-sm">Maintainable, scalable styles with SASS/SCSS.</p>
+            </div>
+            <!-- Skill Card: Tailwind CSS -->
+            <div class="fade-up bg-white/10 backdrop-blur-md border-l-4 border-cyan-400 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" class="h-12 w-12 mb-2" alt="Tailwind CSS" />
+              <span class="text-white font-semibold text-lg mb-1">Tailwind CSS</span>
+              <p class="text-gray-300 text-center text-sm">Utility-first, highly customizable design systems.</p>
+            </div>
+            <!-- Skill Card: React Native -->
+            <div class="fade-up bg-white/10 backdrop-blur-md border-l-4 border-blue-300 rounded-2xl shadow-lg p-6 flex flex-col items-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="h-12 w-12 mb-2" alt="React Native" />
+              <span class="text-white font-semibold text-lg mb-1">React Native</span>
+              <p class="text-gray-300 text-center text-sm">Cross-platform mobile apps with React Native.</p>
+            </div>
+          </div>
+        </div>
 
-            <div class="space-y-20">
-              <!-- Project Item -->
-              <div class="flex flex-col lg:flex-row items-center gap-10">
-                <img src="./assets/project1.png" alt="Project 1" class="w-full lg:w-[500px] rounded-2xl shadow-lg" />
-                <div class="text-center lg:text-left">
-                  <h3 class="text-3xl font-semibold text-green-300">Telugu Matchmakers</h3>
-                  <p class="text-gray-300 mt-4">
-                    A feature-rich matrimonial platform with user and admin dashboards. Built with React, Tailwind CSS,
-                    and React Native for the mobile version.
-                  </p>
-                  <p class="mt-2 text-sm text-gray-400">Tech Stack: React.js, Tailwind CSS, React Native, Firebase</p>
-                  <a href="#"
-                    class="inline-block mt-4 bg-green-500 px-6 py-2 rounded-full hover:bg-green-600 transition">View
-                    Project</a>
-                </div>
+        <!-- Experience Section: Redesigned Timeline -->
+        <div class="max-w-4xl mx-auto py-12 px-2 sm:px-4 md:px-6 lg:px-10 fade-up">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-400 mb-10 text-center">Experience</h1>
+          <div class="relative md:border-l-4 border-blue-400 pl-0 md:pl-8 space-y-12">
+            <!-- Experience 1 -->
+            <div class="relative group">
+              <div class="absolute -left-7 top-0 bg-blue-500 rounded-full p-3 flex items-center justify-center shadow-lg">
+                <!-- Laptop icon -->
+                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17h4.5M4 6h16M4 6v10a2 2 0 002 2H6a2 2 0 01-2-2V6"/>
+                </svg>
               </div>
-
-              <!-- Project 2 -->
-              <div class="flex flex-col-reverse lg:flex-row items-center gap-10">
-                <div class="text-center lg:text-left">
-                  <h3 class="text-3xl font-semibold text-green-300">CrewCraft CRM</h3>
-                  <p class="text-gray-300 mt-4">
-                    A comprehensive CRM tool with customizable dashboards for clients and teams. Designed using Vue.js
-                    and Tailwind CSS.
-                  </p>
-                  <p class="mt-2 text-sm text-gray-400">Tech Stack: Vue.js, Tailwind CSS, Vue Router</p>
-                  <a href="#"
-                    class="inline-block mt-4 bg-green-500 px-6 py-2 rounded-full hover:bg-green-600 transition">View
-                    Project</a>
+              <div class="ml-2 sm:ml-14 bg-gray-800 rounded-xl p-6 shadow-xl border border-blue-500 group-hover:scale-105 transition-transform">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                  <h3 class="text-xl font-bold text-white">Frontend Developer <span class="text-blue-300 font-normal">@ Freelance</span></h3>
+                  <span class="inline-block bg-blue-600 text-white text-xs px-3 py-1 rounded-full mt-2 sm:mt-0">Jan 2023 - Present</span>
                 </div>
-                <img src="./assets/project2.png" alt="Project 2" class="w-full lg:w-[500px] rounded-2xl shadow-lg" />
-              </div>
-
-              <!-- Project 3 -->
-              <div class="flex flex-col lg:flex-row items-center gap-10">
-                <img src="./assets/project3.png" alt="Project 3" class="w-full lg:w-[500px] rounded-2xl shadow-lg" />
-                <div class="text-center lg:text-left">
-                  <h3 class="text-3xl font-semibold text-green-300">TMM Mobile App</h3>
-                  <p class="text-gray-300 mt-4">
-                    Mobile app for Telugu Matchmakers using React Native. Provides a smooth, cross-platform experience.
-                  </p>
-                  <p class="mt-2 text-sm text-gray-400">Tech Stack: React Native, Redux, Firebase</p>
-                  <a href="#"
-                    class="inline-block mt-4 bg-green-500 px-6 py-2 rounded-full hover:bg-green-600 transition">View
-                    Project</a>
-                </div>
-              </div>
-
-              <!-- Project 4 -->
-              <div class="flex flex-col-reverse lg:flex-row items-center gap-10">
-                <div class="text-center lg:text-left">
-                  <h3 class="text-3xl font-semibold text-green-300">Personal Portfolio</h3>
-                  <p class="text-gray-300 mt-4">
-                    This very site! Built using modern tools with a focus on clean code and responsive design.
-                  </p>
-                  <p class="mt-2 text-sm text-gray-400">Tech Stack: HTML, Tailwind CSS, JavaScript</p>
-                  <a href="#"
-                    class="inline-block mt-4 bg-green-500 px-6 py-2 rounded-full hover:bg-green-600 transition">View
-                    Project</a>
-                </div>
-                <img src="./assets/project4.png" alt="Project 4" class="w-full lg:w-[500px] rounded-2xl shadow-lg" />
-              </div>
-
-              <!-- Project 5 -->
-              <div class="flex flex-col lg:flex-row items-center gap-10">
-                <img src="./assets/project5.png" alt="Project 5" class="w-full lg:w-[500px] rounded-2xl shadow-lg" />
-                <div class="text-center lg:text-left">
-                  <h3 class="text-3xl font-semibold text-green-300">E-Commerce UI</h3>
-                  <p class="text-gray-300 mt-4">
-                    A responsive e-commerce UI built with reusable components and smooth animations.
-                  </p>
-                  <p class="mt-2 text-sm text-gray-400">Tech Stack: React.js, Tailwind CSS, Framer Motion</p>
-                  <a href="#"
-                    class="inline-block mt-4 bg-green-500 px-6 py-2 rounded-full hover:bg-green-600 transition">View
-                    Project</a>
+                <p class="text-gray-300 mb-2">Collaborated with startups and agencies to deliver custom web solutions using React, Vue.js, and Tailwind CSS. Led UI/UX design and implemented responsive, accessible interfaces.</p>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span class="bg-blue-700 text-white px-2 py-1 rounded text-xs">React</span>
+                  <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Vue.js</span>
+                  <span class="bg-cyan-600 text-white px-2 py-1 rounded text-xs">Tailwind CSS</span>
+                  <span class="bg-yellow-500 text-white px-2 py-1 rounded text-xs">Figma</span>
                 </div>
               </div>
             </div>
-          </div>
-
-        </div>
-
-
-
-        <!-- Experience Section -->
-        <div class="flex flex-col lg:flex-row items-center justify-between min-h-screen mb-20">
-          <div class="w-full lg:w-1/2 text-center lg:text-left">
-            <h1 class="text-5xl font-bold text-purple-400">Experience</h1>
-            <p class="mt-4 text-lg text-gray-300">
-              With hands-on experience in building modern web and mobile applications, I have contributed to several
-              live projects across startups and freelance gigs. My primary focus has been developing scalable front-end
-              architectures and seamless user interactions.
-            </p>
-
-            <div class="mt-8 space-y-6 text-left">
-              <!-- Experience 1 -->
-              <div>
-                <h3 class="text-xl font-semibold text-white">Frontend Developer – Freelance</h3>
-                <p class="text-sm text-gray-400">Jan 2023 - Present</p>
-                <p class="mt-1 text-gray-300">Worked with various clients to build custom web solutions using React,
-                  Vue.js, and Tailwind CSS.</p>
+            <!-- Experience 2 -->
+            <div class="relative group">
+              <div class="absolute -left-7 top-0 bg-purple-500 rounded-full p-3 flex items-center justify-center shadow-lg">
+                <!-- Code icon -->
+                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7V5a3 3 0 00-6 0v2M3 13h18M5 17h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
               </div>
-
-              <!-- Experience 2 -->
-              <div>
-                <h3 class="text-xl font-semibold text-white">Intern – Web Developer at CodeCraft</h3>
-                <p class="text-sm text-gray-400">Jul 2022 - Dec 2022</p>
-                <p class="mt-1 text-gray-300">Assisted in developing dashboards and interactive components, learned best
-                  practices in responsive UI and component-based design.</p>
+              <div class="ml-2 sm:ml-14 bg-gray-800 rounded-xl p-6 shadow-xl border border-purple-500 group-hover:scale-105 transition-transform">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                  <h3 class="text-xl font-bold text-white">Web Developer Intern <span class="text-purple-300 font-normal">@ CodeCraft</span></h3>
+                  <span class="inline-block bg-purple-600 text-white text-xs px-3 py-1 rounded-full mt-2 sm:mt-0">Jul 2022 - Dec 2022</span>
+                </div>
+                <p class="text-gray-300 mb-2">Assisted in developing dashboards and interactive components. Learned best practices in responsive UI, component-based design, and agile teamwork.</p>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span class="bg-yellow-400 text-white px-2 py-1 rounded text-xs">JavaScript</span>
+                  <span class="bg-purple-400 text-white px-2 py-1 rounded text-xs">Bootstrap</span>
+                  <span class="bg-cyan-600 text-white px-2 py-1 rounded text-xs">APIs</span>
+                </div>
               </div>
             </div>
-          </div>
-
-          <!-- Right Side Image -->
-          <div class="w-full lg:w-1/2 flex justify-center mt-10 lg:mt-0">
-            <img src="./assets/experience.png" alt="Experience Illustration"
-              class="w-[400px] h-[400px] object-cover wake-up" />
-          </div>
-        </div>
-
-
-
-        <!-- Education Section -->
-        <div class="flex flex-col lg:flex-row items-center justify-between min-h-screen mb-20">
-          <!-- Left Side Image -->
-          <div class="w-full lg:w-1/2 flex justify-center mb-10 lg:mb-0">
-            <img src="./assets/education.png" alt="Education Illustration"
-              class="w-[400px] h-[400px] object-cover wake-up" />
-          </div>
-
-          <!-- Right Side Content -->
-          <div class="w-full lg:w-1/2 text-center lg:text-left">
-            <h1 class="text-5xl font-bold text-yellow-400">Education</h1>
-            <p class="mt-4 text-lg text-gray-300">
-              My academic background has laid a strong foundation in computer science and modern development practices.
-            </p>
-
-            <div class="mt-8 space-y-6 text-left">
-              <!-- Degree 1 -->
-              <div>
-                <h3 class="text-xl font-semibold text-white">Bachelor of Technology in Computer Science</h3>
-                <p class="text-sm text-gray-400">XYZ University, 2019 - 2023</p>
-                <p class="mt-1 text-gray-300">Focused on software development, data structures, and full-stack web
-                  technologies.</p>
+            <!-- Experience 3 -->
+            <div class="relative group">
+              <div class="absolute -left-7 top-0 bg-green-500 rounded-full p-3 flex items-center justify-center shadow-lg">
+                <!-- Mobile icon -->
+                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <rect width="16" height="20" x="4" y="2" rx="2"/>
+                  <circle cx="12" cy="18" r="1"/>
+                </svg>
               </div>
-
-              <!-- Degree 2 -->
-              <div>
-                <h3 class="text-xl font-semibold text-white">Intermediate – MPC</h3>
-                <p class="text-sm text-gray-400">ABC Junior College, 2017 - 2019</p>
-                <p class="mt-1 text-gray-300">Mathematics, Physics, Chemistry</p>
+              <div class="ml-2 sm:ml-14 bg-gray-800 rounded-xl p-6 shadow-xl border border-green-500 group-hover:scale-105 transition-transform">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                  <h3 class="text-xl font-bold text-white">Mobile App Developer <span class="text-green-300 font-normal">@ Indie Projects</span></h3>
+                  <span class="inline-block bg-green-600 text-white text-xs px-3 py-1 rounded-full mt-2 sm:mt-0">Feb 2022 - Jun 2022</span>
+                </div>
+                <p class="text-gray-300 mb-2">Developed cross-platform mobile apps using React Native. Focused on performance, smooth animations, and seamless user experience.</p>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span class="bg-blue-400 text-white px-2 py-1 rounded text-xs">React Native</span>
+                  <span class="bg-pink-400 text-white px-2 py-1 rounded text-xs">Redux</span>
+                  <span class="bg-yellow-500 text-white px-2 py-1 rounded text-xs">Firebase</span>
+                </div>
+              </div>
+            </div>
+            <!-- Experience 4 -->
+            <div class="relative group">
+              <div class="absolute -left-7 top-0 bg-red-500 rounded-full p-3 flex items-center justify-center shadow-lg">
+                <!-- Globe icon -->
+                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/>
+                </svg>
+              </div>
+              <div class="ml-2 sm:ml-14 bg-gray-800 rounded-xl p-6 shadow-xl border border-red-500 group-hover:scale-105 transition-transform">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                  <h3 class="text-xl font-bold text-white">Web Designer <span class="text-red-300 font-normal">@ Creative Studio</span></h3>
+                  <span class="inline-block bg-red-600 text-white text-xs px-3 py-1 rounded-full mt-2 sm:mt-0">May 2021 - Jan 2022</span>
+                </div>
+                <p class="text-gray-300 mb-2">Designed and prototyped modern web interfaces for client projects. Specialized in branding, color theory, and user-centered design.</p>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span class="bg-pink-500 text-white px-2 py-1 rounded text-xs">Figma</span>
+                  <span class="bg-yellow-400 text-white px-2 py-1 rounded text-xs">Illustrator</span>
+                  <span class="bg-cyan-600 text-white px-2 py-1 rounded text-xs">SASS</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <div class="max-w-6xl mx-auto">
 
+        <!-- Projects Section -->
+        <div class="w-full max-w-6xl mx-auto py-8 px-2 sm:px-4 md:px-6 lg:px-10 fade-up">
+          <div class="text-center mb-10 sm:mb-16 fade-up">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-green-400">My Projects</h2>
+            <p class="mt-2 sm:mt-4 text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
+              Here are some of the projects I've worked on, showcasing my expertise in frontend and mobile development.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+            <!-- Project 1 -->
+            <div class="fade-up bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col">
+              <div class="relative">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Telugu Matchmakers" class="w-full h-48 sm:h-64 object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+              </div>
+              <div class="p-4 sm:p-6 flex-1 flex flex-col">
+                <h3 class="text-xl sm:text-2xl font-bold text-green-300 mb-2">Telugu Matchmakers</h3>
+                <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A feature-rich matrimonial platform with user and admin dashboards. Built with React, Tailwind CSS, and React Native for the mobile version.</p>
+                <div class="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                  <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">React.js</span>
+                  <span class="bg-cyan-600 text-white px-2 py-1 rounded text-xs">Tailwind CSS</span>
+                  <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">React Native</span>
+                  <span class="bg-yellow-500 text-white px-2 py-1 rounded text-xs">Firebase</span>
+                </div>
+                <a href="#" class="inline-block bg-green-500 px-4 py-2 rounded-full text-white hover:bg-green-600 transition mt-auto">View Project</a>
+              </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="fade-up bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col">
+              <div class="relative">
+                <img src="https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?auto=compress&w=800" alt="CrewCraft CRM" class="w-full h-48 sm:h-64 object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+              </div>
+              <div class="p-4 sm:p-6 flex-1 flex flex-col">
+                <h3 class="text-xl sm:text-2xl font-bold text-green-300 mb-2">CrewCraft CRM</h3>
+                <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A comprehensive CRM tool with customizable dashboards for clients and teams. Designed using Vue.js and Tailwind CSS.</p>
+                <div class="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                  <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Vue.js</span>
+                  <span class="bg-cyan-600 text-white px-2 py-1 rounded text-xs">Tailwind CSS</span>
+                  <span class="bg-blue-500 text-white px-2 py-1 rounded text-xs">Vue Router</span>
+                </div>
+                <a href="#" class="inline-block bg-green-500 px-4 py-2 rounded-full text-white hover:bg-green-600 transition mt-auto">View Project</a>
+              </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="fade-up bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col">
+              <div class="relative">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80" alt="TMM Mobile App" class="w-full h-48 sm:h-64 object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+              </div>
+              <div class="p-4 sm:p-6 flex-1 flex flex-col">
+                <h3 class="text-xl sm:text-2xl font-bold text-green-300 mb-2">TMM Mobile App</h3>
+                <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">Mobile app for Telugu Matchmakers using React Native. Provides a smooth, cross-platform experience.</p>
+                <div class="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                  <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">React Native</span>
+                  <span class="bg-pink-600 text-white px-2 py-1 rounded text-xs">Redux</span>
+                  <span class="bg-yellow-500 text-white px-2 py-1 rounded text-xs">Firebase</span>
+                </div>
+                <a href="#" class="inline-block bg-green-500 px-4 py-2 rounded-full text-white hover:bg-green-600 transition mt-auto">View Project</a>
+              </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="fade-up bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col">
+              <div class="relative">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Personal Portfolio" class="w-full h-48 sm:h-64 object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+              </div>
+              <div class="p-4 sm:p-6 flex-1 flex flex-col">
+                <h3 class="text-xl sm:text-2xl font-bold text-green-300 mb-2">Personal Portfolio</h3>
+                <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">This very site! Built using modern tools with a focus on clean code and responsive design.</p>
+                <div class="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                  <span class="bg-gray-700 text-white px-2 py-1 rounded text-xs">HTML</span>
+                  <span class="bg-cyan-600 text-white px-2 py-1 rounded text-xs">Tailwind CSS</span>
+                  <span class="bg-yellow-400 text-white px-2 py-1 rounded text-xs">JavaScript</span>
+                </div>
+                <a href="#" class="inline-block bg-green-500 px-4 py-2 rounded-full text-white hover:bg-green-600 transition mt-auto">View Project</a>
+              </div>
+            </div>
+            <!-- Project 5 -->
+            <div class="fade-up bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 flex flex-col">
+              <div class="relative">
+                <img src="https://images.pexels.com/photos/38568/pexels-photo-38568.jpeg?auto=compress&w=800" alt="E-Commerce UI" class="w-full h-48 sm:h-64 object-cover" />
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
+              </div>
+              <div class="p-4 sm:p-6 flex-1 flex flex-col">
+                <h3 class="text-xl sm:text-2xl font-bold text-green-300 mb-2">E-Commerce UI</h3>
+                <p class="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">A responsive e-commerce UI built with reusable components and smooth animations.</p>
+                <div class="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                  <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">React.js</span>
+                  <span class="bg-cyan-600 text-white px-2 py-1 rounded text-xs">Tailwind CSS</span>
+                  <span class="bg-pink-500 text-white px-2 py-1 rounded text-xs">Framer Motion</span>
+                </div>
+                <a href="#" class="inline-block bg-green-500 px-4 py-2 rounded-full text-white hover:bg-green-600 transition mt-auto">View Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+
+        <!-- Education Section: Redesigned Timeline -->
+        <div class="max-w-4xl mx-auto py-12 px-2 sm:px-4 md:px-6 lg:px-10 fade-up">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-400 mb-10 text-center">Education</h1>
+          <div class="relative md:border-l-4 border-yellow-400 pl-0 md:pl-8 space-y-12">
+            <!-- Education 1 -->
+            <div class="relative group">
+              <div class="absolute -left-7 top-0 bg-yellow-400 rounded-full p-3 flex items-center justify-center shadow-lg">
+                <!-- Graduation cap icon -->
+                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 7v-7m0 0L3 9m9 5l9-5"/>
+                </svg>
+              </div>
+              <div class="ml-2 sm:ml-14 bg-gray-800 rounded-xl p-6 shadow-xl border border-yellow-400 group-hover:scale-105 transition-transform">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                  <h3 class="text-xl font-bold text-white">Bachelor of Technology in Computer Science</h3>
+                  <span class="inline-block bg-yellow-500 text-white text-xs px-3 py-1 rounded-full mt-2 sm:mt-0">XYZ University, 2019 - 2023</span>
+                </div>
+                <p class="text-gray-300 mb-2">Focused on software development, data structures, and full-stack web technologies. Graduated with distinction. Key coursework: Algorithms, Web Development, Databases.</p>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span class="bg-blue-500 text-white px-2 py-1 rounded text-xs">GPA: 8.7/10</span>
+                  <span class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">Full Stack</span>
+                  <span class="bg-green-500 text-white px-2 py-1 rounded text-xs">Projects</span>
+                </div>
+              </div>
+            </div>
+            <!-- Education 2 -->
+            <div class="relative group">
+              <div class="absolute -left-7 top-0 bg-blue-400 rounded-full p-3 flex items-center justify-center shadow-lg">
+                <!-- Book icon -->
+                <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20h9M12 4H3m9 0v16"/>
+                </svg>
+              </div>
+              <div class="ml-2 sm:ml-14 bg-gray-800 rounded-xl p-6 shadow-xl border border-blue-400 group-hover:scale-105 transition-transform">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                  <h3 class="text-xl font-bold text-white">Intermediate – MPC</h3>
+                  <span class="inline-block bg-blue-500 text-white text-xs px-3 py-1 rounded-full mt-2 sm:mt-0">ABC Junior College, 2017 - 2019</span>
+                </div>
+                <p class="text-gray-300 mb-2">Mathematics, Physics, Chemistry. Developed strong analytical and problem-solving skills. Participated in science fairs and coding clubs.</p>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span class="bg-yellow-400 text-white px-2 py-1 rounded text-xs">Top 5%</span>
+                  <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Science Fair</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
 
         <!-- Contact Me Section -->
-        <div class="min-h-screen flex flex-col items-center justify-center text-center mb-20">
-          <h1 class="text-5xl font-bold text-green-400 mb-6">Contact Me</h1>
-          <p class="text-lg text-gray-300 max-w-2xl mb-10">
-            Feel free to reach out if you’d like to collaborate, ask a question, or just say hello!
+        <div class="min-h-screen flex flex-col items-center justify-center text-center mb-20 max-w-6xl mx-auto py-8 px-2 sm:px-4 md:px-6 lg:px-10 fade-up">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-green-400 mb-4 sm:mb-6">Contact Me</h1>
+          <p class="text-base sm:text-lg text-gray-300 max-w-2xl mb-6 sm:mb-10">
+            Feel free to reach out if you'd like to collaborate, ask a question, or just say hello!
           </p>
 
-          <form class="w-full max-w-xl space-y-6">
+          <form id="contactForm" class="w-full max-w-md space-y-4 sm:space-y-6 mx-auto" method="POST" action="https://formspree.io/f/mgvynlqn">
+            <input type="hidden" name="_redirect" value="/thank-you.html" />
             <div class="flex flex-col">
-              <label for="name" class="text-left text-white mb-1">Name</label>
-              <input type="text" id="name"
-                class="p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400"
-                placeholder="Your Name" />
+              <label for="name" class="text-left text-white mb-1 text-sm sm:text-base">Name</label>
+              <input type="text" id="name" name="name"
+                class="p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base"
+                placeholder="Your Name" required />
             </div>
-
             <div class="flex flex-col">
-              <label for="email" class="text-left text-white mb-1">Email</label>
-              <input type="email" id="email"
-                class="p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400"
-                placeholder="your@email.com" />
+              <label for="email" class="text-left text-white mb-1 text-sm sm:text-base">Email</label>
+              <input type="email" id="email" name="email"
+                class="p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base"
+                placeholder="your@email.com" required />
             </div>
-
             <div class="flex flex-col">
-              <label for="message" class="text-left text-white mb-1">Message</label>
-              <textarea id="message" rows="4"
-                class="p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400"
-                placeholder="Your message..."></textarea>
+              <label for="message" class="text-left text-white mb-1 text-sm sm:text-base">Message</label>
+              <textarea id="message" name="message" rows="4"
+                class="p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm sm:text-base"
+                placeholder="Your message..." required></textarea>
             </div>
-
             <button type="submit"
-              class="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-xl transition-all duration-300 font-semibold">
+              class="w-full bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-xl transition-all duration-300 font-semibold text-base sm:text-lg">
               Send Message
             </button>
           </form>
-        </div>
 
+          <!-- Success Modal -->
+          <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 hidden">
+            <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full text-center">
+              <svg class="mx-auto mb-4 h-12 w-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <h2 class="text-2xl font-bold text-gray-800 mb-2">Message Sent!</h2>
+              <p class="text-gray-600 mb-6">Your message was successfully sent. Thank you for reaching out!</p>
+              <button id="closeModalBtn" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-semibold transition">Close</button>
+            </div>
+          </div>
+
+          <script>
+            // Contact form AJAX submission and modal logic
+            document.addEventListener('DOMContentLoaded', function () {
+              const form = document.getElementById('contactForm');
+              const modal = document.getElementById('successModal');
+              const closeModalBtn = document.getElementById('closeModalBtn');
+              form.addEventListener('submit', async function (e) {
+                e.preventDefault();
+                const formData = new FormData(form);
+                try {
+                  const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                  });
+                  if (response.ok) {
+                    modal.classList.remove('hidden');
+                    form.reset();
+                  } else {
+                    alert('There was an error sending your message. Please try again.');
+                  }
+                } catch (error) {
+                  alert('There was an error sending your message. Please try again.');
+                }
+              });
+              closeModalBtn.addEventListener('click', function () {
+                modal.classList.add('hidden');
+              });
+            });
+          </script>
+
+        </div>
 
       </div>
     </div>
   </section>
 
-
-
+  <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
   <script>
     const word1 = "Creativity";
     const ampersand = " & ";
@@ -376,7 +493,6 @@
 
     startAnimation(); // Start animation loop
   </script>
-
 
   <script>
     // Navbar Scroll Effect
@@ -484,6 +600,20 @@
         }
       });
     }, 50);
+  </script>
+
+  <script>
+    // Fade-up/fade-in on scroll
+    const fadeEls = document.querySelectorAll('.fade-up, .fade-in');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    fadeEls.forEach(el => observer.observe(el));
   </script>
 </body>
 
